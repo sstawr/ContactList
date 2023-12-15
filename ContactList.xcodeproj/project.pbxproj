@@ -13,6 +13,7 @@
 		6AD377492B2D0A5D0051B721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AD377482B2D0A5D0051B721 /* Assets.xcassets */; };
 		6AD3774C2B2D0A5D0051B721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD3774A2B2D0A5D0051B721 /* LaunchScreen.storyboard */; };
 		6AD3775B2B2D0B970051B721 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD3775A2B2D0B970051B721 /* ContactListViewController.swift */; };
+		6AD3775D2B2D0CB60051B721 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD3775C2B2D0CB60051B721 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6AD3774B2B2D0A5D0051B721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AD3774D2B2D0A5D0051B721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AD3775A2B2D0B970051B721 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		6AD3775C2B2D0CB60051B721 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		6AD377592B2D0B380051B721 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6AD3775C2B2D0CB60051B721 /* DataStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AD377402B2D0A5B0051B721 /* AppDelegate.swift in Sources */,
+				6AD3775D2B2D0CB60051B721 /* DataStore.swift in Sources */,
 				6AD377422B2D0A5B0051B721 /* SceneDelegate.swift in Sources */,
 				6AD3775B2B2D0B970051B721 /* ContactListViewController.swift in Sources */,
 			);
