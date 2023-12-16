@@ -17,30 +17,37 @@ struct Person: Hashable {
     
     static func getPerson() -> [Person] {
         var persons: [Person] = []
+        let firstNames = getRandomUniqueData(from: DataStore().firstNames)
+        let lastNames = getRandomUniqueData(from: DataStore().lastNames)
+        let emails = getRandomUniqueData(from: DataStore().emails)
+        let phones = getRandomUniqueData(from: DataStore().phones)
         
-        while persons.count < DataStore().firstNames.count {
-            let randomPerson = createRandomPerson()
-            if !persons.contains(randomPerson) {
-                persons.append(randomPerson)
-            }
+        for (index, firstName) in firstNames.enumerated() {
+            let person = Person(
+                firstName: firstName,
+                lastName: lastNames[index],
+                email: emails[index],
+                phone: phones[index]
+            )
+            persons.append(person)
         }
-
+        
         return persons
     }
-    
-    private static func createRandomPerson() -> Person {
-        Person(
-            firstName: DataStore().firstNames.randomElement() ?? "",
-            lastName: DataStore().lastNames.randomElement() ?? "",
-            email: DataStore().emails.randomElement() ?? "",
-            phone: DataStore().phones.randomElement() ?? ""
-        )
+}
+
+extension Person {
+    private static func getRandomUniqueData(from source: [String]) -> [String] {
+        var randomUniqueData: [String] = []
+        
+        while randomUniqueData.count < source.count {
+            let randomElement = source.randomElement()
+            if !randomUniqueData.contains(randomElement ?? ""){
+                randomUniqueData.append(randomElement ?? "")
+            }
+        }
+            
+        return randomUniqueData
     }
 }
 
-// MARK: - Equatable
-extension Person: Equatable {
-    static func == (lhs: Person, rhs: Person) -> Bool {
-        return lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName
-    }
-}
