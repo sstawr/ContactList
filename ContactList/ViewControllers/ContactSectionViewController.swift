@@ -10,10 +10,6 @@ import UIKit
 final class ContactSectionViewController: UITableViewController {
 
     var contactList: [Person]!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 }
 
 // MARK: - UITableViewDataSource

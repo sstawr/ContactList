@@ -15,12 +15,13 @@ struct Person: Hashable {
         "\(firstName) \(lastName)"
     }
     
-    static func getPerson() -> [Person] {
+    static func getPersons() -> [Person] {
         var persons: [Person] = []
-        let firstNames = getRandomUniqueData(from: DataStore().firstNames)
-        let lastNames = getRandomUniqueData(from: DataStore().lastNames)
-        let emails = getRandomUniqueData(from: DataStore().emails)
-        let phones = getRandomUniqueData(from: DataStore().phones)
+        let dataStore = DataStore()
+        let firstNames = getRandomUniqueData(from: dataStore.firstNames)
+        let lastNames = getRandomUniqueData(from: dataStore.lastNames)
+        let emails = getRandomUniqueData(from: dataStore.emails)
+        let phones = getRandomUniqueData(from: dataStore.phones)
         
         for (index, firstName) in firstNames.enumerated() {
             let person = Person(
