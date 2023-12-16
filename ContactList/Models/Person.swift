@@ -5,7 +5,7 @@
 //  Created by Evgeni Glushko on 16.12.23.
 //
 
-struct Person {
+struct Person: Hashable {
     let firstName: String
     let lastName: String
     let email: String
@@ -19,23 +19,22 @@ struct Person {
         var persons: [Person] = []
         
         while persons.count < DataStore().firstNames.count {
-            let randomPerson = Person(
-                firstName: DataStore().firstNames.randomElement() ?? "",
-                lastName: DataStore().lastNames.randomElement() ?? "",
-                email: DataStore().emails.randomElement() ?? "",
-                phone: DataStore().phones.randomElement() ?? ""
-            )
-        
-            addUniquePerson(randomPerson, to: &persons)
+            let randomPerson = createRandomPerson()
+            if !persons.contains(randomPerson) {
+                persons.append(randomPerson)
+            }
         }
 
         return persons
     }
     
-    private static func addUniquePerson(_ person: Person, to target: inout [Person]) {
-        if !target.contains(person) {
-            target.append(person)
-        }
+    private static func createRandomPerson() -> Person {
+        Person(
+            firstName: DataStore().firstNames.randomElement() ?? "",
+            lastName: DataStore().lastNames.randomElement() ?? "",
+            email: DataStore().emails.randomElement() ?? "",
+            phone: DataStore().phones.randomElement() ?? ""
+        )
     }
 }
 
