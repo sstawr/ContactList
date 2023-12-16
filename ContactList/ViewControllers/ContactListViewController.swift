@@ -9,8 +9,11 @@ import UIKit
 
 final class ContactListViewController: UITableViewController {
 
+    private let contactList = Person.getPerson()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(contactList)
     }
 
     // MARK: - Table view data source
